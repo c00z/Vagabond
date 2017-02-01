@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20170201001352) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "locations_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["locations_id"], name: "index_posts_on_locations_id", using: :btree
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["location_id"], name: "index_posts_on_location_id", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
@@ -43,6 +43,6 @@ ActiveRecord::Schema.define(version: 20170201001352) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "posts", "locations", column: "locations_id"
+  add_foreign_key "posts", "locations"
   add_foreign_key "posts", "users"
 end

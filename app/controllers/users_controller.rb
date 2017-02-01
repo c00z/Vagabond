@@ -18,6 +18,24 @@ class UsersController < ApplicationController
    redirect_to @user # <-- go to show
  end
 
+ def edit
+  user_id = params[:id]
+  @user   = User.find_by_id(user_id)
+end
+
+def update
+  user_id = params[:user_id]
+  user = User.find_by_id(user_id)
+
+  if User.update(user_params)
+    flash[:notice] = "Updated successfully."
+    redirect_to @user
+  else
+    flash[:error] = user.errors.full_messages.join(", ")
+    redirect_to edit_user_path
+  end
+end
+
 
   private
   def user_params
