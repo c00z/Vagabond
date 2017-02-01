@@ -12,3 +12,5 @@
 <% @user.posts.each do |p| %>
 <p><%= link_to "#{p.title}", post_path(p)%></p>
 <% end %>
+
+<p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>
