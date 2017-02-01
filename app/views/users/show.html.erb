@@ -5,6 +5,5 @@
 </div>
 
 <% @user.posts.each do |p| %>
-<p><%= p.title %></p>
-<p><%= p.content %></p>
+<p><%= link_to "#{p.title}", post_path(p)%></p>
 <% end %>

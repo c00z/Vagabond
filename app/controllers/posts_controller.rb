@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @post = Post.find_by_id(params[:id])
   end
 
   def create
@@ -29,6 +29,9 @@ class PostsController < ApplicationController
   def destroy
   end
 
-
+  private
+  def user_params
+    params.require(:post).permit(:title, :content)
+  end
 
 end

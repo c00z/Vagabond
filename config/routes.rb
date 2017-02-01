@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   get '/users/new' => 'users#new', as: 'new_user'
   get '/users' => 'users#index', as: 'users'
-  get '/users/:id' => 'users#show'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show', as: 'user'
 
@@ -18,7 +17,6 @@ Rails.application.routes.draw do
 
   get '/posts/new' => 'posts#new', as: 'new_post'
   get '/posts' => 'posts#index', as: 'posts'
-  get '/posts/:id' => 'posts#show'
   post '/posts' => 'posts#create'
   get '/posts/:id' => 'posts#show', as: 'post'
 
