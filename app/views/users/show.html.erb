@@ -4,5 +4,7 @@
   <%= @user.created_at %>
 </div>
 
-<h1> <%= link_to "My First POST!!!!", user_path(current_user) %></h1>
-<p> Here's some cool shit about my post </p>
+<% @user.posts.each do |p| %>
+<p><%= p.title %></p>
+<p><%= p.content %></p>
+<% end %>

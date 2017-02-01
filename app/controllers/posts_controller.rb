@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @locations = @user.locations
   end
 
+  def show
+
+  end
+
   def create
     @location = Location.find(params[:location_id])
     @location.users.push(current_user)
