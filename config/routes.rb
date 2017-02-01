@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get '/locations/:id' => 'locations#show'
 
 
-  get '/users/new' => 'users#new', as: 'new_user'
   get '/users' => 'users#index', as: 'users'
+  get '/users/new' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show', as: 'user'
+  get '/users/:id/edit' => 'users#edit', as: 'edit_user'
+  patch '/users/:id' => 'users#update'
 
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
