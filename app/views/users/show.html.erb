@@ -1,10 +1,13 @@
 <div>
-  Welcome, <%= @user.first_name %>!
-  <%= @user.last_name %>
-  <%= @user.user_name %>
-  <%= @user.current_city %>
-  <%= @user.created_at %>
+  <h2>Welcome, <%= @user.user_name %>!</h2>
+  <ul>
+
+  <li>Current City: <%= @user.current_city %></li>
+  <li>Member Since: <%= @user.created_at %></li>
+  </ul>
 </div>
+
+<h2>Reviews</h2>
 
 <% @user.posts.each do |p| %>
 <p><%= link_to "#{p.title}", post_path(p)%></p>
