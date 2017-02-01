@@ -14,9 +14,6 @@ class PostsController < ApplicationController
     @location.users.push(current_user)
   end
 
-  def show
-  end
-
   def new
   end
 
