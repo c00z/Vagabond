@@ -3,7 +3,7 @@
   <ul>
 
   <li>Current City: <%= @user.current_city %></li>
-  <li>Member Since: <%= @user.created_at %></li>
+  <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
   </ul>
 </div>
 
@@ -11,6 +11,7 @@
 
 <% @user.posts.each do |p| %>
 <p><%= link_to "#{p.title}", post_path(p)%></p>
+<p><%= truncate p.content, length: 160 %></p>
 <% end %>
 
 <p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>

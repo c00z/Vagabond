@@ -1,4 +1,4 @@
 
 <h2><%= @post.title %></h2>
-<h4>By <%= @post.user.user_name %></h4>
+<h4>By <%= link_to "#{@post.user.user_name}", user_path(current_user) %></h4>
 <p><%= @post.content %></p>
