@@ -1,5 +1,6 @@
 <div>
   <h2>Welcome, <%= @user.user_name %>!</h2>
+  <%= image_tag @user.avatar.url(:medium) %>
   <ul>
 
   <li>Current City: <%= @user.current_city %></li>

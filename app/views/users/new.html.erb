@@ -15,6 +15,9 @@
       <div>
         <%= f.password_field :password, placeholder: "Password" %>
       </div>
+      <div>
+        <%= f.file_field :avatar %>
+      </div>
       <a class="waves-effect waves-light btn"><%= f.submit "Sign Up" %></a>
     <% end %>
   </div>
