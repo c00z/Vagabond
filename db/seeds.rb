@@ -16,17 +16,18 @@ p "Hello from seeds.rb"
 #
 # Speaker.create(speakers_data)
 
-Location.create({name: "SF"})
-
 Post.delete_all
+Location.delete_all
+Location.create({name: "San Francisco"})
+
 
 posts_data = [
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first},
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first},
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first},
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first},
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first},
-{:title=>FFaker::Book.title, :content=>FFaker::BaconIpsum.paragraphs, :user=> User.first, :location=> Location.first}
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first},
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first},
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first},
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first},
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first},
+{:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first}
 ]
 
 post = Post.create(posts_data)
