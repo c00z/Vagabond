@@ -2,14 +2,14 @@
   <div class="col s6 offset-s3">
     <div class="row">
       <h3>New Post</h3>
-      <%= form_for @post do |f| %>
+      <%= form_for [@location, @post], url: create_post_path do |f| %>
       <div>
         <%= f.text_field :title, placeholder: "Title" %>
       </div>
       <div>
         <%= f.text_area :content, placeholder: "Content" %>
       </div>
-      <a class="waves-effect waves-light btn"><%= f.submit "Submit", name: "location_id", value: "1" %></a>
+      <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
       <% end %>
     </div>
   </div>

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     new_post = Post.new(post_params)
-    @location = Location.find_by_id(params[:location_id])
+    @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
     # binding.pry
