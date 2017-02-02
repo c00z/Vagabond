@@ -1,4 +1,5 @@
 <div class="container">
+  <%=  image_tag @post.user.avatar.url(:thumb) %>
   <h2><%= @post.title %></h2>
   <h4>By <%= link_to "#{@post.user.user_name}", user_path(@post.user) %></h4>
   <p><%= @post.content %></p>

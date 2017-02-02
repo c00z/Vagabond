@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @location = Location.find_by_id(params[:id])
   end
 
   before_action :require_login, only: [:edit, :update, :destroy]
