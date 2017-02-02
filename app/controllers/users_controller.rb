@@ -13,10 +13,17 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.create(user_params)
-   login(@user) # <-- log the user in
-   redirect_to @user # <-- go to show
+   @user = User.new(user_params)
+    if @user.save
+      login(@user)
+     redirect_to @user # <-- go to show
+   else
+     flash[:notice] = "Please enter username & email"
+     redirect_to new_user_path
+    end
  end
+
+  before_action :require_login, only: [:edit]
 
  def edit
   user_id = params[:id]

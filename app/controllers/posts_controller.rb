@@ -11,18 +11,27 @@ class PostsController < ApplicationController
 
   def create
     new_post = Post.new(post_params)
-    @location = Location.find_by_id(params[:location_id])
+    @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
+     @post = new_post.save
+    if @post
+      redirect_to @location
+    else
+      flash[:notice] = "Title must be between 1 and 200 characters"
+       redirect_to new_post_path
+     end
+
     # binding.pry
     # new_post.location = Location.find_by_id(params[:id])
-    @post = new_post.save
-    redirect_to @location
   end
 
   def new
     @post = Post.new
+    @location = Location.find_by_id(params[:id])
   end
+
+  before_action :require_login, only: [:edit, :update, :destroy]
 
   def edit
     post_id = params[:id]
