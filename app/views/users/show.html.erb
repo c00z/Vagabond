@@ -3,7 +3,7 @@
   <ul>
 
   <li>Current City: <%= @user.current_city %></li>
-  <li>Member Since: <%= @user.created_at %></li>
+  <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
   </ul>
 </div>
 
