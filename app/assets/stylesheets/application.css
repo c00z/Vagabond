@@ -15,6 +15,11 @@
  *= require materialize
  */
 
+body {
+   background-color: #f5f5f5;
+ }
+
+
 #navbar {
   background: #00BBD3;
 }
@@ -22,10 +27,20 @@
 #slogan {
   font-size: 65px;
   text-align: center;
-  color: #9D9D9D;
+  vertical-align: middle;
+  line-height: 450px;
+  color: black;
   font-family: 'Arvo', serif;
+  background-color: white;
+  opacity: .6;
+  font-weight: bold;
 }
 
-body {
-  background-color: #f5f5f5;
+#parallax {
+    background-image: url("map.jpg");
+    min-height: 450px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

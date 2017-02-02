@@ -1,18 +1,20 @@
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :user_name, placeholder: "Username" %>
-  </div>
-  <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <a class="waves-effect waves-light btn"><%= f.submit "Save" %></a>
-<% end %>
+ <div class="container">
+  <%= form_for @user do |f| %>
+    <div>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
+    <div>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+    <div>
+      <%= f.text_field :user_name, placeholder: "Username" %>
+    </div>
+    <div>
+      <%= f.text_field :current_city, placeholder: "Current City" %>
+    </div>
+    <div>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <a class="waves-effect waves-light btn"><%= f.submit "Save" %></a>
+  <% end %>
+</div>
