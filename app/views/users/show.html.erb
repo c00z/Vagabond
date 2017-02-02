@@ -1,10 +1,11 @@
 <div class="container">
   <h2>Welcome, <%= @user.user_name %>!</h2>
+  <hr>
   <div class="row">
     <div class="col s4">
 
       <ul>
-
+      <%= image_tag "sloth.jpg", width: "300", height: "200" %>
       <li>Current City: <%= @user.current_city %></li>
       <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
       <p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>
@@ -12,7 +13,7 @@
     </div>
 
     <div class="col s8">
-      <h3>Reviews</h3>
+      <h3>Your Posts</h3>
 
       <% @user.posts.each do |p| %>
       <p><%= link_to "#{p.title}", post_path(p)%></p>
