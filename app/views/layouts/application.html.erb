@@ -6,15 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Bungee|Inconsolata" rel="stylesheet">
+
   </head>
 
   <body>
 
 
-    <nav>
+    <nav id="navbar">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">&nbsp;Vagabond</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if @location %>
+          <li><%= link_to "Add Post", new_post_path(@location) %></li>
+          <% end %>
           <% if current_user %>
           <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path %></li>
@@ -25,7 +30,7 @@
         </ul>
       </div>
     </nav>
- <div class="container">
+
    <% flash.each do |name, msg| %>
    <p>
      <small> <%= name.capitalize %>: <%= msg %> </small>
@@ -33,6 +38,6 @@
    <% end %>
 
     <%= yield %>
-  <div>
+
   </body>
 </html>

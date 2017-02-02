@@ -1,1 +1,25 @@
-<h1>Show all my locations</h1>
+<!-- HOME PAGE -->
+<div id="parallax">
+  <h1 id="slogan">Travel. Review. Repeat.</h1>
+</div>
+
+ <div class="container">
+  <div class="row">
+    <% @locations.each do |loc| %>
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("SF.gif") %>
+          <span class="card-title"><%= loc.name %></span>
+        </div>
+        <div class="card-content">
+          <p> </p>
+        </div>
+        <div class="card-action">
+          <%= link_to "#{loc.name}", location_path(loc) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
