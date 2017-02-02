@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/posts/new' => 'posts#new', as: 'new_post'
+  get '/cities/:id/posts/new' => 'posts#new', as: 'new_post'
   get '/posts' => 'posts#index', as: 'posts'
-  post '/posts' => 'posts#create'
+  post '/posts/' => 'posts#create'
   get '/posts/:id' => 'posts#show', as: 'post'
   get '/posts/:id/edit' => 'posts#edit', as: 'edit_post'
   patch '/posts/:id' => 'posts#update'

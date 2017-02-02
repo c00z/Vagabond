@@ -1,0 +1,22 @@
+<h3>New Post</h3>
+<!-- <div class="input-field col s12">
+  <select>
+    <option value="" disabled selected>Choose your City</option>
+    <option location="1">Option 1</option>
+    <option location="2">Option 2</option>
+    <option location="3">Option 3</option>
+  </select>
+  <label>Your City</label>
+</div> -->
+<div class="row">
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+    <%= f.text_area :content, placeholder: "Content" %>
+  </div>
+  <a class="waves-effect waves-light btn"><%= f.submit "Submit", name: "location_id", value: "1" %></a>
+<% end %>
+</div>
