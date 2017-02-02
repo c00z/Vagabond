@@ -14,3 +14,18 @@
  *= require_self
  *= require materialize
  */
+
+#navbar {
+  background: #00BBD3;
+}
+
+#slogan {
+  font-size: 65px;
+  text-align: center;
+  color: #9D9D9D;
+  font-family: 'Arvo', serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
