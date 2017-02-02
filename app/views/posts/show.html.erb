@@ -1,5 +1,9 @@
- <div class="container">
+<div class="container">
   <h2><%= @post.title %></h2>
   <h4>By <%= link_to "#{@post.user.user_name}", user_path(current_user) %></h4>
   <p><%= @post.content %></p>
+
+  <p><%= link_to "edit ", edit_post_path(@post),  :class => 'waves-effect waves-light btn' %>
+  <%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red' %></p>
+
 </div>
