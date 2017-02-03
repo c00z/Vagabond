@@ -3,6 +3,10 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @locations = @user.locations
+    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
   end
 
   def show
