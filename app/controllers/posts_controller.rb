@@ -14,8 +14,8 @@ class PostsController < ApplicationController
     @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
-     @post = new_post.save
-    if @post
+    #  @post = 
+    if new_post.save
       redirect_to @location
     else
       flash[:notice] = "Title must be between 1 and 200 characters"

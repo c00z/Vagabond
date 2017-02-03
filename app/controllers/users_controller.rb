@@ -16,7 +16,8 @@ class UsersController < ApplicationController
    @user = User.new(user_params)
     if @user.save
       login(@user)
-     redirect_to @user # <-- go to show
+      UserMailer.welcome_email(@user).deliver_now
+     redirect_to @user
    else
      flash[:notice] = "Please enter username & email"
      redirect_to new_user_path
