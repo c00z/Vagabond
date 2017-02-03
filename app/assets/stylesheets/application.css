@@ -44,3 +44,14 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#cardlink {
+  text-decoration: none!important;
+  color: white;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+#locationshow {
+  background-image: url(#{image_tag "@location.avatar.url"});
+}

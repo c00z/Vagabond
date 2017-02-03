@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
-  <div class="col s6 offset-s3">
+    <br>
+    <br>
+  <div class="col s4 pull-s2">
+    <br>
     <%=  image_tag @location.avatar.url %>
+  </div>
+  <div class="col s8 push-s1">
       <h3>New Post</h3>
       <%= form_for [@location, @post], url: create_post_path do |f| %>
       <div>
@@ -12,6 +17,7 @@
       </div>
       <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
