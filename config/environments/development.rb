@@ -53,4 +53,14 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "postmaster@sandbox1459d55f850f42e09d51d388b3d287ca.mailgun.org",
+  :user_name => "postmaster@MYDOMAIN.mailgun.org",
+  :password => "MYPASSWORD"
+  }
 end
