@@ -1,14 +1,18 @@
-<h2><%= @post.title %></h2>
-<h4>By <%= link_to "#{@post.user.user_name}", user_path(current_user) %></h4>
+<!-- EDIT POSTS -->
+
+<div class="container">
+  <h2><%= @post.title %></h2>
+  <h4>By <%= link_to "#{@post.user.user_name}", user_path(current_user) %></h4>
 
 
-<div class="row">
+  <div class="row">
 
-<%= form_for @post do |f| %>
+    <%= form_for @post do |f| %>
 
-  <div>
-    <%= f.text_area :content, placeholder: "Content" %>
+      <div>
+        <%= f.text_area :content, placeholder: "Content" %>
+      </div>
+      <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
+    <% end %>
   </div>
-  <a class="waves-effect waves-light btn"><%= f.submit "Submit" %></a>
-<% end %>
 </div>

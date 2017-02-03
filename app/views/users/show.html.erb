@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col s4">
       <ul>
-      <%= image_tag @user.avatar.url(:thumb) %>
+      <%= image_tag @user.avatar.url(:thumb), id:"userprofileimg" %>
       <li>Current City: <%= @user.current_city %></li>
       <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
       <p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>

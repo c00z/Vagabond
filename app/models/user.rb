@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :locations, through: :posts
 
   has_secure_password
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "200x200>" }, default_url: "/assets/:style/missing_avatar.jpg"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "r00x200>" }, default_url: "/assets/:style/missing_avatar.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   def self.confirm(params)
