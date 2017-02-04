@@ -9,7 +9,9 @@
       <%= image_tag @user.avatar.url(:thumb), id:"userprofileimg" %>
       <li>Current City: <%= @user.current_city %></li>
       <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
+      <% if current_user == @user %>
       <p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>
+      <% end %>
       </ul>
     </div>
 
