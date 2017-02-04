@@ -10,7 +10,52 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  *= require materialize
+ *= require toastr
  */
+
+body {
+   background-color: #f5f5f5;
+ }
+
+
+#navbar {
+  background: #00BBD3;
+}
+
+#slogan {
+  font-size: 65px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 450px;
+  color: black;
+  font-family: 'Arvo', serif;
+  background-color: white;
+  opacity: .6;
+  font-weight: bold;
+}
+
+#parallax {
+    background-image: url("map.jpg");
+    min-height: 450px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cardlink {
+  text-decoration: none!important;
+  color: white;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+
+#userprofileimg {
+  border-radius: 25%;
+ 	border: 5px solid #000;
+ 	background: #000;
+}

@@ -1,10 +1,11 @@
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
+<!-- Edit User Profile -->
+
+ <div class="container">
+   <div class="row">
+     <br>
+     <br>
+   <div class="col s6 push-s3">
+   <%= form_for @user do |f| %>
   <div>
     <%= f.text_field :user_name, placeholder: "Username" %>
   </div>
@@ -14,5 +15,13 @@
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
-  <a class="waves-effect waves-light btn"><%= f.submit "Edit Profile" %></a>
-<% end %>
+  <div>
+
+    <%= f.file_field :avatar %>
+  </div>
+  <br>
+  <a class="waves-effect waves-light btn"><%= f.submit "Save" %></a>
+  <% end %>
+</div>
+</div>
+</div>

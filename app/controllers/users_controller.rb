@@ -6,6 +6,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+
+    @hash = Gmaps4rails.build_markers(@user.posts) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow "<h6><a href='/posts/#{post.id}''>#{post.title}</a></h6><p>#{post.content[0..100]}...</p>"
+    end
   end
 
   def new
@@ -13,10 +19,17 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.create(user_params)
-   login(@user) # <-- log the user in
-   redirect_to @user # <-- go to show
+   @user = User.new(user_params)
+    if @user.save
+      login(@user)
+     redirect_to @user # <-- go to show
+   else
+     flash[:notice] = "Please enter username & email"
+     redirect_to new_user_path
+    end
  end
+
+  before_action :require_login, only: [:edit]
 
  def edit
   user_id = params[:id]
@@ -31,7 +44,7 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    flash[:error] = user.errors.full_messages.join(", ")
+    flash[:error] = @user.errors.full_messages.join(", ")
     redirect_to edit_user_path(@user)
   end
 end
@@ -39,7 +52,7 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :user_name, :email, :password, :current_city)
+    params.require(:user).permit(:first_name, :last_name, :user_name, :email, :password, :current_city, :avatar)
   end
 
 end

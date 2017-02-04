@@ -1,0 +1,28 @@
+<!-- ADD A NEW POST -->
+
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+  <div class="col s4 pull-s2">
+    <br>
+    <%=  image_tag @location.avatar.url, width: "500", height: "300" %>
+  </div>
+  <div class="col s8">
+      <h3>New Post</h3>
+      <%= form_for [@location, @post], url: create_post_path do |f| %>
+      <div>
+        <%= f.text_field :title, placeholder: "Title" %>
+      </div>
+      <div>
+        <%= f.text_area :content, placeholder: "Content", class: "materialize-textarea" %>
+      </div>
+      <div>
+        <%= f.text_field :addr, placeholder: "Address" %>
+      </div>
+      <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

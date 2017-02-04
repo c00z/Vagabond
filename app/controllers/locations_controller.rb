@@ -8,9 +8,4 @@ class LocationsController < ApplicationController
     @location = Location.find_by_id(params[:id])
   end
 
-  # def new
-  #   @locations = Location.new
-  # end
-
-
 end

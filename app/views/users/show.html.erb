@@ -1,16 +1,41 @@
-<div>
-  <h2>Welcome, <%= @user.user_name %>!</h2>
-  <ul>
+<!-- User Profile page -->
 
-  <li>Current City: <%= @user.current_city %></li>
-  <li>Member Since: <%= @user.created_at %></li>
-  </ul>
+<div class="container">
+  <h2>Welcome, <%= @user.user_name %>!</h2>
+  <hr>
+  <div class="row">
+    <div class="col m3">
+      <ul>
+      <%= image_tag @user.avatar.url(:thumb), id:"userprofileimg" %>
+      <li>Current City: <%= @user.current_city %></li>
+      <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
+      <p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>
+      </ul>
+    </div>
+
+    <div  class= "col m9">
+      <div id="map" style='width: 700px; height: 350px;'></div>
+    </div>
+
+    <div class="col s8 offset-m2">
+      <h3>Your Posts</h3>
+
+      <% @user.posts.each do |p| %>
+      <p><%= link_to "#{p.title}", post_path(p)%></p>
+      <p><%= truncate p.content, length: 160 %></p>
+      <hr>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<h2>Reviews</h2>
 
-<% @user.posts.each do |p| %>
-<p><%= link_to "#{p.title}", post_path(p)%></p>
-<% end %>
-
-<p><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn' %></p>
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+markers = handler.addMarkers(<%=raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+handler.map.centerOn([37.7749, -122.4194]);
+});
+</script>

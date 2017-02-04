@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   # get '/libraries' => 'libraries#index'
   # get '/locations/new' => 'locations#new', as: 'new_location'
-  get '/locations/:id' => 'locations#show'
-
+  get '/cities/:id' => 'locations#show', as: 'location'
 
   get '/users' => 'users#index', as: 'users'
   get '/users/new' => 'users#new', as: 'new_user'
@@ -17,9 +16,14 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/posts/new' => 'posts#new', as: 'new_post'
+  get '/cities/:id/posts/new' => 'posts#new', as: 'new_post'
+  post '/cities/:id/posts' => 'posts#create', as: 'create_post'
   get '/posts' => 'posts#index', as: 'posts'
-  post '/posts' => 'posts#create'
   get '/posts/:id' => 'posts#show', as: 'post'
+  get '/posts/:id/edit' => 'posts#edit', as: 'edit_post'
+  patch '/posts/:id' => 'posts#update'
+  delete '/posts/:id' => 'posts#destroy'
+
+
 
 end
