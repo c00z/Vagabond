@@ -20,6 +20,10 @@
       <div>
         <%= f.text_field :addr, placeholder: "Address" %>
       </div>
+      <p>
+      <%= f.check_box(:tags)  %>
+      <%= f.label(:tags, "Family friendly") %>
+      </p>
       <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
       <% end %>
     </div>

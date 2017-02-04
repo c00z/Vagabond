@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   def create
     address post_params
     new_post = Post.new(post_params)
+    binding.pry
     @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
@@ -66,7 +67,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :addr)
+    params.require(:post).permit(:title, :content, :addr, :tags)
   end
 
 end
