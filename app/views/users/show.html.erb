@@ -14,18 +14,18 @@
     </div>
 
     <div  class= "col m9">
-      <div id="map" style='width: 700px; height: 350px;'></div>
+      <div id="map" style='width: 700px; height: 350px; border: 3px black solid;'></div>
     </div>
+  </div>
+  <div class="col s8 offset-m2">
+    <h3>Your Posts</h3>
 
-    <div class="col s8 offset-m2">
-      <h3>Your Posts</h3>
-
-      <% @user.posts.each do |p| %>
-      <p><%= link_to "#{p.title}", post_path(p)%></p>
-      <p><%= truncate p.content, length: 160 %></p>
-      <hr>
-      <% end %>
-    </div>
+    <% @user.posts.each do |p| %>
+    <p><%= link_to "#{p.title}", post_path(p)%></p>
+    <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+    <p><%= truncate p.content, length: 160 %></p>
+    <hr>
+    <% end %>
   </div>
 </div>
 
