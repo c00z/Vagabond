@@ -7,6 +7,8 @@ end
 
 gem 'ffaker'
 
+gem 'figaro'
+
 gem 'materialize-sass'
 
 gem 'toastr-rails'
