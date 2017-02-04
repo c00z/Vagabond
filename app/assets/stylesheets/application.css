@@ -53,6 +53,9 @@ body {
   font-weight: bolder;
 }
 
-#locationshow {
-  background-image: url(#{image_tag "@location.avatar.url"});
+
+#userprofileimg {
+  border-radius: 25%;
+ 	border: 5px solid #000;
+ 	background: #000;
 }
