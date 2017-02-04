@@ -13,11 +13,12 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.new(user_params)
-    if @user.save
-      login(@user)
-      UserMailer.welcome_email(@user).deliver_now
-     redirect_to @user
+   user = User.new(user_params)
+    if user.save
+      login(user)
+      redirect_to user
+      UserMailer.welcome_email(user).deliver_now
+
    else
      flash[:notice] = "Please enter username & email"
      redirect_to new_user_path
