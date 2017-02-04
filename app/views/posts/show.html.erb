@@ -1,11 +1,20 @@
-<div class="container">
-  <%=  image_tag @post.user.avatar.url(:thumb) %>
-  <h2><%= @post.title %></h2>
-  <h4>By <%= link_to "#{@post.user.user_name}", user_path(@post.user) %></h4>
-  <p><%= @post.content %></p>
+<!-- Show One Post -->
 
-  <% if current_user == @post.user %>
-  <p><%= link_to "edit ", edit_post_path(@post),  :class => 'waves-effect waves-light btn' %>
-  <%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red' %></p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="col s4">
+      <%=  image_tag @post.user.avatar.url(:thumb) %>
+    </div>
+    <div class="col s8">
+      <h2><%= @post.title %></h2>
+      <h4>By <%= link_to "#{@post.user.user_name}", user_path(@post.user) %></h4>
+      <p><%= @post.content %></p>
+
+      <% if current_user == @post.user %>
+      <p><%= link_to "edit ", edit_post_path(@post),  :class => 'waves-effect waves-light btn' %>
+      <%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red' %></p>
+      <% end %>
+    </div>
+  </div>
 </div>

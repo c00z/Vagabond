@@ -1,4 +1,4 @@
-<!-- HOME PAGE -->
+<!-- HOME PAGE, SHOW ALL LOCATIONS -->
 <div id="parallax">
   <h1 id="slogan">Travel. Review. Repeat.</h1>
 </div>
@@ -10,14 +10,14 @@
       <div class="card">
         <div class="card-image">
           <%= image_tag loc.avatar.url(:medium), height: "400" %>
-          <span class="card-title"><%= loc.name %></span>
+          <span class="card-title" id="cardlink"><%= link_to "#{loc.name}", location_path(loc) %></span>
         </div>
-        <div class="card-content">
+        <!-- <div class="card-content">
           <p> </p>
-        </div>
-        <div class="card-action">
+        </div> -->
+        <!-- <div class="card-action">
           <%= link_to "#{loc.name}", location_path(loc) %>
-        </div>
+        </div> -->
       </div>
     </div>
     <% end %>
