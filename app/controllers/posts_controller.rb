@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
+    Post.paginate(:page => params[:page], :per_page => 3)
   end
 
   def address hsh
