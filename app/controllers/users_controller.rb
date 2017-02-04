@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @hash = Gmaps4rails.build_markers(@user.posts) do |post, marker|
       marker.lat post.latitude
       marker.lng post.longitude
-      binding.pry
     end
   end
 
@@ -44,7 +43,7 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    flash[:error] = user.errors.full_messages.join(", ")
+    flash[:error] = @user.errors.full_messages.join(", ")
     redirect_to edit_user_path(@user)
   end
 end
