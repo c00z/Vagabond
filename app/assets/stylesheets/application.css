@@ -59,3 +59,25 @@ body {
  	border: 5px solid #000;
  	background: #000;
 }
+
+#signuppage {
+  background-color: #9D9D9D;
+  border: 2px solid #00BBD3;
+  border-radius: 10px;
+}
+
+#form {
+  background-color: white;
+  border: 1px solid #00BBD3;
+  border-radius: 5px;
+}
+
+#signupheader {
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-size: 30px;
+}
+
+#signupbutton {
+  margin: 10px;
+}
