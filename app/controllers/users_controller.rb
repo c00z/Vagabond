@@ -6,6 +6,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+
+    @hash = Gmaps4rails.build_markers(@user.posts) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow "<h6><a href='/posts/#{post.id}''>#{post.title}</a></h6><p>#{post.content[0..100]}...</p>"
+    end
   end
 
   def new
@@ -38,7 +44,7 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    flash[:error] = user.errors.full_messages.join(", ")
+    flash[:error] = @user.errors.full_messages.join(", ")
     redirect_to edit_user_path(@user)
   end
 end

@@ -16,6 +16,9 @@
 //= require_tree .
 //= require materialize
 //= require toastr
+//= require underscore
+//= require gmaps/google
+//= require map
 
 
 $(document).ready(function() {
