@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @hash = Gmaps4rails.build_markers(@user.posts) do |post, marker|
       marker.lat post.latitude
       marker.lng post.longitude
+      marker.infowindow "<h6>#{post.title}</h6><p>#{post.content}</p>"
     end
   end
 
