@@ -9,13 +9,18 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(params[:id])
   end
 
+  def address hsh
+    hsh['addr']
+  end
+
   def create
+    address post_params
     new_post = Post.new(post_params)
     @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
-    #  @post = 
-    if new_post.save
+    @post = new_post.save
+    if @post
       redirect_to @location
     else
       flash[:notice] = "Title must be between 1 and 200 characters"
@@ -61,7 +66,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :addr)
   end
 
 end
