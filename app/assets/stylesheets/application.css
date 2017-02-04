@@ -88,3 +88,11 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+.btn {
+  background-color: #00BBD3 !important;
+}
+
+.btn:hover {
+  background-color: #02E0FF !important;
+}
