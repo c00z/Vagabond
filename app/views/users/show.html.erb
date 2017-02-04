@@ -4,7 +4,7 @@
   <h2>Welcome, <%= @user.user_name %>!</h2>
   <hr>
   <div class="row">
-    <div class="col m3 offset-m1">
+    <div class="col m3">
       <ul>
       <%= image_tag @user.avatar.url(:thumb) %>
       <li>Current City: <%= @user.current_city %></li>
@@ -13,8 +13,8 @@
       </ul>
     </div>
 
-    <div  class= "col m8">
-      <div id="map" style='width: 600px; height: 300px;'></div>
+    <div  class= "col m9">
+      <div id="map" style='width: 700px; height: 350px;'></div>
     </div>
 
     <div class="col s8 offset-m2">
