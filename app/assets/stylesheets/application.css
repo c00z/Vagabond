@@ -53,11 +53,35 @@ body {
   font-weight: bolder;
 }
 
+#map {
+  box-sizing: border-box;
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: inline-block;
+  position: relative;
+  /*left: 0;*/
+  border-color: white;
+  border-width: 15px 0px 15px 0px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: auto;
+}
 
 #userprofileimg {
-  border-radius: 25%;
- 	border: 5px solid #000;
- 	background: #000;
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: inline-block;
+  position: relative;
+  left: 0;
+  border-color: white /* for an acceptable IE result*/;
+  border-width: 15px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: auto;
 }
 
 #signuppage {
@@ -95,4 +119,8 @@ body {
 
 .btn:hover {
   background-color: #02E0FF !important;
+}
+
+.delete:hover {
+  background-color: #C60000 !important;
 }

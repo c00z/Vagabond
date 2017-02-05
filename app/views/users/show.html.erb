@@ -1,12 +1,19 @@
 <!-- User Profile page -->
+<div class="row">
+  <div class= "col s12" id="map" style=' height: 350px; '></div>
+</div>
+
+
 
 <div class="container">
-  <h2>Welcome, <%= @user.user_name %>!</h2>
+  <h4>Welcome, <%= @user.user_name %>!</h4>
   <hr>
   <div class="row">
     <div class="col m3">
-      <ul>
       <%= image_tag @user.avatar.url(:thumb), id:"userprofileimg" %>
+    </div>
+    <div class="col m6">
+      <ul>
       <li>Current City: <%= @user.current_city %></li>
       <li>Member Since: <%= @user.created_at.strftime("%b %d, %Y") %></li>
       <% if current_user == @user %>
@@ -15,9 +22,7 @@
       </ul>
     </div>
 
-    <div  class= "col m9">
-      <div id="map" style='width: 700px; height: 350px; border: 3px black solid;'></div>
-    </div>
+
   </div>
   <div class="col s8 offset-m2">
     <hr>

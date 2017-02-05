@@ -50,7 +50,8 @@ class PostsController < ApplicationController
 
     if @post.update_attributes(post_params)
       flash[:notice] = "Updated successfully."
-      redirect_to current_user
+      @location = Post.find_by_id(params[:id]).location
+      redirect_to location_path(@location)
     else
       flash[:error] = user.errors.full_messages.join(", ")
       redirect_to edit_post_path(@post)
