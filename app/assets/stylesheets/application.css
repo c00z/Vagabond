@@ -89,3 +89,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+#newpostimage {
+  border: 3px black solid;
+}
