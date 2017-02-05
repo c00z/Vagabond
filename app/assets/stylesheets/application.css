@@ -75,7 +75,8 @@ body {
 #signupheader {
   text-align: center;
   font-family: 'Arvo', serif;
-  font-size: 30px;
+  font-size: 40px;
+  color: white;
 }
 
 #signupbutton {
