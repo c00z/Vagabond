@@ -13,7 +13,7 @@ Feel free to fork / star / watch for your own personal use.
 See the published project at [test.herokuapp.com](https://google.com/)!
 
 #Entity-Relationship Diagram
-<img src="http://i.imgur.com/VJQIu2D.png" width="600">
+<img src="http://i.imgur.com/VJQIu2D.png" width="800">
 
 
 #Technologies Used   
