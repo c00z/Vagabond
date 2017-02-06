@@ -59,3 +59,16 @@ body {
  	border: 5px solid #000;
  	background: #000;
 }
+
+.posts-background {
+  background-color: #9D9D9D;
+  border-radius: 10px;
+  border-color: #00BBD3!important;
+  border: solid;
+  margin-right: 5%!important;
+}
+
+.post-title {
+  text-decoration: none;
+  color: white!important;
+}
