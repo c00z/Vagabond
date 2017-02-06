@@ -84,10 +84,11 @@ body {
 }
 
 #Signuppagebackground {
-  /*background-image: url("map.jpg");*/
+  background-image: url("map.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  height: 750px;
 }
 
 #newpostimage {

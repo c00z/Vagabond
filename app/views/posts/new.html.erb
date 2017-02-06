@@ -13,13 +13,13 @@
       <h3 id="signupheader">New Post about <%= @location.name %></h3>
       <%= form_for [@location, @post], url: create_post_path do |f| %>
       <div>
-        <%= f.text_field :title, placeholder: "Title", id:"form" %>
+        <%= f.text_field :title, placeholder: " Title", id:"form" %>
       </div>
       <div>
-        <%= f.text_area :content, placeholder: "Content", class: "materialize-textarea", id:"form" %>
+        <%= f.text_area :content, placeholder: " Content", class: "materialize-textarea", id:"form" %>
       </div>
       <div>
-        <%= f.text_field :addr, placeholder: "Address", id:"form" %>
+        <%= f.text_field :addr, placeholder: " Address", id:"form" %>
       </div>
       <div class="col s6 push-s4">
         <a class="waves-effect waves-light btn" id="signupbutton"><%= f.submit "Submit"%></a>
