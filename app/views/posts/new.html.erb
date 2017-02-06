@@ -24,7 +24,21 @@
       <div class="col s6 push-s4">
         <a class="waves-effect waves-light btn" id="signupbutton"><%= f.submit "Submit"%></a>
       </div>
-      <% end %>
+      <div class="field">
+        <%= f.label "This Post Features:" %><br />
+        <%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <div class="col m4">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class = "col s12">
+        <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
+        <% end %>
+      </div>
     </div>
     </div>
   </div>

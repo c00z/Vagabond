@@ -23,12 +23,12 @@ class PostsController < ApplicationController
     if @post
       redirect_to @location
     else
-      flash[:notice] = "Title must be between 1 and 200 characters"
+      new_post.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
        redirect_to new_post_path
      end
 
-    # binding.pry
-    # new_post.location = Location.find_by_id(params[:id])
   end
 
   def new
@@ -53,7 +53,9 @@ class PostsController < ApplicationController
       @location = Post.find_by_id(params[:id]).location
       redirect_to location_path(@location)
     else
-      flash[:error] = user.errors.full_messages.join(", ")
+      @post.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
       redirect_to edit_post_path(@post)
     end
   end
@@ -68,7 +70,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :addr)
+    params.require(:post).permit(:title, :content, :addr, activity_ids:[])
   end
 
 end

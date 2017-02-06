@@ -1,20 +1,99 @@
 <!-- Show one location -->
-
  <div class="container" id="locationshow">
-  <h1><%= @location.name %></h1>
-  <%=  image_tag @location.avatar.url, width: "1000", height: "400" %>
-  <hr>
-  <% @location.posts.each do |p| %>
+   <br>
+   <div class="row">
+     <div class="col m8">
+       <div class="card">
+         <div class="card-image">
+           <%=  image_tag @location.avatar.url %>
+           <span class="card-title"><h1><%= @location.name %></h1></span>
+         </div>
+       </div>
+     </div>
+     <div class="col m2 offset-m1">
+         <div class="row">
+           <h4 class="col s12 adventure-text">Tell us your <%=@location.name%> adventure!</h4>
+         </div>
+         <div class="row">
+           <%= link_to "New Adventure", new_post_path(@location), class:"btn col s12 button-color"%>
+         </div>
+     </div>
+   </div>
   <div class="row">
-    <div class="col s4">
-      <%= image_tag p.user.avatar.url(:thumb) %>
+    <div class="col m8">
+      <h5>Recent Adventures in <%= @location.name %></h5>
+      <hr>
+      <% @location.posts.each do |p| %>
+      <div class="row hoverable posts-background">
+        <div class="col s4">
+          <br>
+          <%= image_tag p.user.avatar.url(:thumb) %>
+        </div>
+        <div class="col s7 offset-s1">
+          <h4><%= link_to "#{p.title}", post_path(p), class:"post-title"%></h3>
+          <h5>Written by <%= p.user.user_name %> on <%=p.created_at.strftime("%b %d, %Y")%></h5>
+          <p><%= truncate p.content, length: 160  %></p>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div class="col s7">
-      <h3><%= link_to "#{p.title}", post_path(p)%></h3>
-      <h5>Written by <%= p.user.user_name %> on <%=p.created_at.strftime("%b %d, %Y")%></h5>
-      <p><%= truncate p.content, length: 160  %></p>
+    <div class="col m4">
+      <div class="col s12">
+        <h5>Top Activites</h5>
+        <hr>
+      </div>
+      <% @activity_cards.each do |card| %>
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag card.avatar.url %>
+                <span class="card-title"><%= card.name %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-  <hr>
-  <% end %>
 </div>
+      <!-- <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-image">
+              <img src="http://www.cloud9speeddating.com/uploads/3/4/4/2/34429832/download-3_orig.jpg">
+              <span class="card-title">Family Fun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-image">
+              <img src="http://pastorkylehuber.com/wp-content/uploads/2015/02/romentic-couple-romance-hd-wallpapers.jpg">
+              <span class="card-title">Romance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://static1.squarespace.com/static/54ef7738e4b0457c95f3bec7/t/5519b50ee4b021f6432a112a/1427748113294/">
+              <span class="card-title">Pets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://s-media-cache-ak0.pinimg.com/originals/11/83/aa/1183aaa68a92cbc1f529759b49f16005.jpg">
+              <span class="card-title">Outdoor Adventure</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
