@@ -12,6 +12,10 @@ Feel free to fork / star / watch for your own personal use.
 
 See the published project at [test.herokuapp.com](https://google.com/)!
 
+#Entity-Relationship Diagram
+<img src="http://i.imgur.com/VJQIu2D.png" width="600">
+
+
 #Technologies Used   
 
 ####Languages:
@@ -27,21 +31,56 @@ Rails
 
 ## Code We're Proud Of
 <hr>
-The code below does awesome stuff...
+Ricardo
 <hr>
-```javascript
-// CREATE DIETARY OBJECT FROM CHECKBOX INPUT, TURN ON/OFF VALUE TO 1/0 VALUE
-var dietaryTags = "";
-$('input[type=checkbox]').each(function () {
-   var key = $(this).attr('class');
-   var thisVal = (this.checked ? 1 : 0);
-   newData.dietary[key] = thisVal;
-});
+```ruby
+def update
+  post_id = params[:id]
+  @post = Post.find(post_id)
+
+  if @post.update_attributes(post_params)
+    flash[:notice] = "Updated successfully."
+    @location = Post.find_by_id(params[:id]).location
+    redirect_to location_path(@location)
+  else
+    @post.errors.full_messages.each do |message|
+      flash[:error] = message
+    end
+    redirect_to edit_post_path(@post)
+  end
+end
+```
+<hr>
+Zach
+<hr>
+```ruby
+def create
+ user = User.new(user_params)
+  if user.save
+    login(user)
+    redirect_to user
+    UserMailer.welcome_email(user).deliver_now
+
+ else
+   @user.errors.full_messages.each do |message|
+     flash[:error] = message
+   end
+   redirect_to new_user_path
+  end
+end
+```
+<hr>
+RJ
+<hr>
+```ruby
+def create
+
 ```
 
 ### Screen Shots
-<img src="http://i.imgur.com/KgRiwtT.png" width="600">
-<img src="http://i.imgur.com/FfCdEoa.png" width="600">
+<img src="http://i.imgur.com/tS1Lsuo.jpg" width="600">
+<img src="http://i.imgur.com/j9GVwR7.png" width="600">
+<img src="http://i.imgur.com/ReJXa7Q.png" width="600">
 
 ### Contributors
 [Ricardo Arellano](https://github.com/ricarellano), [Zach Cusimano](https://github.com/c00z) & [Ryan Johnson](https://github.com/johnson-rl)
