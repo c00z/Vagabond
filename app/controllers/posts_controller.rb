@@ -50,7 +50,8 @@ class PostsController < ApplicationController
 
     if @post.update_attributes(post_params)
       flash[:notice] = "Updated successfully."
-      redirect_to current_user
+      @location = Post.find_by_id(params[:id]).location
+      redirect_to location_path(@location)
     else
       flash[:error] = user.errors.full_messages.join(", ")
       redirect_to edit_post_path(@post)
@@ -60,8 +61,9 @@ class PostsController < ApplicationController
   def destroy
     post_id = params[:id]
     @post = Post.find(post_id)
+    @location = Post.find_by_id(params[:id]).location
     @post.destroy
-    redirect_to current_user
+    redirect_to location_path(@location)
   end
 
   private

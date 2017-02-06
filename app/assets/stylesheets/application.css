@@ -53,11 +53,38 @@ body {
   font-weight: bolder;
 }
 
+#map {
+  box-sizing: border-box;
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: block;
+  position: relative;
+  left: 10%;
+  border-color: white;
+  border-width: 25px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: 0 auto;
+  width: 80%;
+
+
+}
 
 #userprofileimg {
-  border-radius: 25%;
- 	border: 5px solid #000;
- 	background: #000;
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: inline-block;
+  position: relative;
+  left: 0;
+  border-color: white;
+  border-width: 25px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: 0 auto;
 }
 
 #signuppage {
@@ -93,4 +120,29 @@ body {
 
 #newpostimage {
   border: 3px black solid;
+}
+.profile {
+  margin-top: 55px;
+  font-size: 18px;
+  line-height: 180%;
+}
+
+.profile-btn {
+  margin-top: 110px;
+}
+
+.posts-msg {
+  
+}
+
+.btn {
+  background-color: #00BBD3 !important;
+}
+
+.btn:hover {
+  background-color: #02E0FF !important;
+}
+
+.delete:hover {
+  background-color: #C60000 !important;
 }
