@@ -76,13 +76,26 @@ end
 RJ
 <hr>
 ```ruby
-def create
-
+def activity_count
+  activity_counter = {}
+  self.posts.each do |p|
+    p.activities.each do |a|
+      if activity_counter.has_key?(a.name)
+        activity_counter[a.name] += 1
+      else
+        activity_counter[a.name] = 1
+      end
+    end
+  end
+  activity_counter
+end
 ```
 
 ## Screen Shots
 <img src="http://i.imgur.com/tS1Lsuo.jpg" width="600">
+<hr>
 <img src="http://i.imgur.com/j9GVwR7.png" width="600">
+<hr>
 <img src="http://i.imgur.com/ReJXa7Q.png" width="600">
 
 ### Contributors
