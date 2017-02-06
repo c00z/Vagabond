@@ -12,18 +12,18 @@
       <li><strong>Current City:</strong> &nbsp; <%= @user.current_city %></li>
       <li><strong>Member Since:</strong> &nbsp; <%= @user.created_at.strftime("%b %d, %Y") %></li>
     </ul>
-  </div>
-  <div class="col m3 profile-btn">
+
     <% if current_user == @user %>
     <p class="left-align"><%= link_to "edit ",  edit_user_path(@user), :class => 'waves-effect waves-light btn ' %></p>
     <% end %>
-  </div>
+
+</div>
   </div>
   <hr>
   <h4>Your Posts</h4>
 </div>
     <div class="row">
-      <div class= "col s12" id="map" style=' height: 300px; '></div>
+      <div class= "col s12" id="map" style='height: 300px;'></div>
     </div>
 <div class="container">
   <div class="col s8 offset-m2 posts-msg">
@@ -31,10 +31,13 @@
     <!-- <h3>Your Posts</h3> -->
 
     <% @user.posts.each do |p| %>
-    <p style="font-size: 20px;"><%= link_to "#{p.title}", post_path(p)%></p>
-    <p><%=p.created_at.strftime("%b %d, %Y")%></p>
-    <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
-    <hr>
+    <div class="row hoverable posts-background">
+      <div class="col s10 offset-s1">
+        <h4><%= link_to "#{p.title}", post_path(p), class:"post-title"%></h4>
+        <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+        <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
