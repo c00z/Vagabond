@@ -18,7 +18,7 @@
 //= require toastr
 //= require underscore
 //= require gmaps/google
-//= require map
+
 
 
 $(document).ready(function() {
@@ -41,6 +41,7 @@ $(document).ready(function() {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
   }
+
 
 
 
