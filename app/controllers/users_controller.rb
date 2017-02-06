@@ -24,7 +24,9 @@ class UsersController < ApplicationController
       login(@user)
      redirect_to @user # <-- go to show
    else
-     flash[:notice] = "Please enter username & email"
+     @user.errors.full_messages.each do |message|
+       flash[:error] = message
+     end
      redirect_to new_user_path
     end
  end
@@ -44,7 +46,9 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    flash[:error] = @user.errors.full_messages.join(", ")
+    @user.errors.full_messages.each do |message|
+      flash[:error] = message
+    end
     redirect_to edit_user_path(@user)
   end
 end

@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def create
     address post_params
     new_post = Post.new(post_params)
-    binding.pry
     @location = Location.find_by_id(params[:id])
     new_post.user = current_user
     new_post.location = @location
@@ -24,12 +23,12 @@ class PostsController < ApplicationController
     if @post
       redirect_to @location
     else
-      flash[:notice] = "Title must be between 1 and 200 characters"
+      new_post.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
        redirect_to new_post_path
      end
 
-    # binding.pry
-    # new_post.location = Location.find_by_id(params[:id])
   end
 
   def new
@@ -53,7 +52,9 @@ class PostsController < ApplicationController
       flash[:notice] = "Updated successfully."
       redirect_to current_user
     else
-      flash[:error] = user.errors.full_messages.join(", ")
+      @post.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
       redirect_to edit_post_path(@post)
     end
   end
