@@ -21,12 +21,4 @@ class Location < ApplicationRecord
     activity_counter
   end
 
-  # def top_activities acts
-  #   top_five = []
-  #   acts.values.sort.reverse.each do |i|
-  #     top_five.push(acts.select{|k,v| k == i})
-  #   end
-  #   top_five[0..4]
-  #   binding.pry
-  # end
 end

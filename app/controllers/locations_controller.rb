@@ -8,7 +8,6 @@ class LocationsController < ApplicationController
     @location = Location.find_by_id(params[:id])
     all_activities = @location.activity_count
     @activity_cards = top_activities all_activities
-    p @activity_cards
   end
 
   private
