@@ -4,9 +4,12 @@
 
 ## Vagabond Travel App
 
-<i> Full Stack App built for WDI's Project 1 </i>
+<i> Full Stack App built for our WDI Group Project </i>
 
 Vagabond is a simple way for users to share tips (AKA posts) about their favorite locations around the world.
+
+Users will be able to create a profile, make new posts and view a record of their travels.
+
 
 Feel free to fork / star / watch for your own personal use.
 
@@ -77,7 +80,7 @@ def create
 
 ```
 
-### Screen Shots
+## Screen Shots
 <img src="http://i.imgur.com/tS1Lsuo.jpg" width="600">
 <img src="http://i.imgur.com/j9GVwR7.png" width="600">
 <img src="http://i.imgur.com/ReJXa7Q.png" width="600">
