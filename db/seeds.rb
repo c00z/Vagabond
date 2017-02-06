@@ -93,5 +93,7 @@ Post.all.each do |p|
   p.activities.push(Activity.order('RANDOM()').limit(3))
 end
 
+
 p Post.first.activities
 p "Goodbye from seeds.rb"
+

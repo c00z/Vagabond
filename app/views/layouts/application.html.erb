@@ -24,6 +24,7 @@
         <a href="/" class="brand-logo">&nbsp;Vagabond</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
+          <li><%= @current_user.user_name%>!&nbsp;</li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
