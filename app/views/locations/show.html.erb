@@ -2,13 +2,21 @@
  <div class="container" id="locationshow">
    <br>
    <div class="row">
-     <div class="col s8 offset-s2">
+     <div class="col m8">
        <div class="card">
          <div class="card-image">
            <%=  image_tag @location.avatar.url %>
            <span class="card-title"><h1><%= @location.name %></h1></span>
          </div>
        </div>
+     </div>
+     <div class="col m2 offset-m1">
+         <div class="row">
+           <h4 class="col s12 adventure-text">Tell us your <%=@location.name%> adventure!</h4>
+         </div>
+         <div class="row">
+           <%= link_to "New Adventure", new_post_path(@location), class:"btn col s12 button-color"%>
+         </div>
      </div>
    </div>
   <div class="row">

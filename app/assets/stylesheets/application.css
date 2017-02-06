@@ -72,3 +72,12 @@ body {
   text-decoration: none;
   color: white!important;
 }
+
+.adventure-text {
+  margin-top: 40%;
+  text-align: center;
+}
+
+.button-color {
+  background-color: #00BBD3!important;
+}
