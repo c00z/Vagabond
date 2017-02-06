@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
   end
 
-  before_action :require_login, only: [:edit]
+  before_action :require_login, only: [:edit, :update]
 
   def edit
     user_id = params[:id]
@@ -48,9 +48,8 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    @user.errors.full_messages.each do |message|
-      flash[:error] = message
-    end
+      flash[:error] = "nondescriptive unhelpful flash"
+
     redirect_to edit_user_path(@user)
   end
 end
