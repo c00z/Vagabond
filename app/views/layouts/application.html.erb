@@ -23,10 +23,8 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">&nbsp;Vagabond</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if @location %>
-          <li><%= link_to "Add Post", new_post_path(@location) %></li>
-          <% end %>
           <% if current_user %>
+          <li><%= @current_user.user_name%>!&nbsp;</li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
@@ -36,13 +34,6 @@
         </ul>
       </div>
     </nav>
-
-   <!-- <% flash.each do |name, msg| %>
-   <p>
-     <small> <%= name.capitalize %>: <%= msg %> </small>
-   </p>
-   <% end %> -->
-
 
 	 <% unless flash.empty? %>
 	  <script type="text/javascript">

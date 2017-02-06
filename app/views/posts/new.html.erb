@@ -6,22 +6,37 @@
     <br>
   <div class="col s4 pull-s2">
     <br>
-    <%=  image_tag @location.avatar.url, width: "500", height: "300" %>
+    <%=  image_tag @location.avatar.url, width: "500", height: "300", id:"newpostimage" %>
+
   </div>
-  <div class="col s8">
-      <h3>New Post</h3>
+  <div class="col s8 push-s1" id="signuppage">
+      <h3 id="signupheader">New Post about <%= @location.name %></h3>
       <%= form_for [@location, @post], url: create_post_path do |f| %>
       <div>
-        <%= f.text_field :title, placeholder: "Title" %>
+        <%= f.text_field :title, placeholder: " Title", id:"form" %>
       </div>
       <div>
-        <%= f.text_area :content, placeholder: "Content", class: "materialize-textarea" %>
+        <%= f.text_area :content, placeholder: " Content", class: "materialize-textarea", id:"form" %>
       </div>
       <div>
-        <%= f.text_field :addr, placeholder: "Address" %>
+        <%= f.text_field :addr, placeholder: " Address", id:"form" %>
       </div>
-      <a class="waves-effect waves-light btn"><%= f.submit "Submit"%></a>
-      <% end %>
+
+      <div class="field" id:"form">
+        <%= f.label "This Post Features:" %><br />
+        <%= f.collection_check_boxes :activity_ids, Activity.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <div class="col m4" id="form-check">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="col s6 push-s4">
+        <a class="waves-effect waves-light btn" id="signupbutton"><%= f.submit "Submit"%></a>
+      </div>
+        <% end %>
     </div>
     </div>
   </div>

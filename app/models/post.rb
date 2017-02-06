@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: {minimum: 1, maximum: 2000}
   belongs_to :user
   belongs_to :location
+  has_and_belongs_to_many :activities
 
   def address
     self['addr']

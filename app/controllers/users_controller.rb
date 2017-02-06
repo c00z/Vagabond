@@ -19,17 +19,21 @@ class UsersController < ApplicationController
   end
 
   def create
-   @user = User.new(user_params)
-    if @user.save
-      login(@user)
-     redirect_to @user # <-- go to show
+   user = User.new(user_params)
+    if user.save
+      login(user)
+      redirect_to user
+      UserMailer.welcome_email(user).deliver_now
+
    else
-     flash[:notice] = "Please enter username & email"
+     @user.errors.full_messages.each do |message|
+       flash[:error] = message
+     end
      redirect_to new_user_path
     end
  end
 
-  before_action :require_login, only: [:edit]
+  before_action :require_login, only: [:edit, :update]
 
  def edit
   user_id = params[:id]
@@ -44,7 +48,8 @@ def update
     flash[:notice] = "Updated successfully."
     redirect_to @user
   else
-    flash[:error] = @user.errors.full_messages.join(", ")
+      flash[:error] = "nondescriptive unhelpful flash"
+
     redirect_to edit_user_path(@user)
   end
 end
