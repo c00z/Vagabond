@@ -2,26 +2,28 @@
 
  <div class="container">
    <div class="row">
-     <br>
-     <br>
-   <div class="col s6 push-s3">
-   <%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :user_name, placeholder: "Username" %>
+         <br>
+         <br>
+       <div class="col s6 push-s3" id="signuppage">
+         <h4 id="signupheader">Edit Profile</h4>
+         <%= form_for @user do |f| %>
+        <div>
+          <%= f.text_field :user_name, placeholder: "Username", id:"form" %>
+        </div>
+        <div>
+          <%= f.text_field :current_city, placeholder: "Current City", id:"form" %>
+        </div>
+        <div>
+          <%= f.text_field :email, placeholder: "Email", id:"form" %>
+        </div>
+        <div>
+          <%= f.file_field :avatar %>
+        </div>
+        <br>
+        <div class="col s6 push-s4">
+          <a class="waves-effect waves-light btn" id="signupbutton"><%= f.submit "Save" %></a>
+        </div>
+        <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-
-    <%= f.file_field :avatar %>
-  </div>
-  <br>
-  <a class="waves-effect waves-light btn"><%= f.submit "Save" %></a>
-  <% end %>
-</div>
-</div>
 </div>

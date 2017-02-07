@@ -15,7 +15,7 @@
 
       <% if current_user == @post.user %>
       <p><%= link_to "edit ", edit_post_path(@post),  :class => 'waves-effect waves-light btn' %>
-      <%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red' %></p>
+      <%= link_to "delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, :class => 'waves-effect waves-light btn red delete' %></p>
       <% end %>
     </div>
   </div>

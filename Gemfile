@@ -7,6 +7,8 @@ end
 
 gem 'ffaker'
 
+gem 'figaro'
+
 gem 'materialize-sass'
 
 gem 'toastr-rails'
@@ -58,6 +60,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'awesome_print'
   gem 'meta_request'
+  gem 'rails-erd'
 
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

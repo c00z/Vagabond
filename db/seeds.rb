@@ -1,25 +1,10 @@
 p "Hello from seeds.rb"
 
-# Speaker.delete_all
-#
-# speakers_data = [
-#     {:first=>"Cory", :last=>"Fauver", :email=>"cory@example.com"},
-#     {:first=>"Brianna", :last=>"Veenstra", :email=>"brianna@example.com"},
-#     {:first=>"Matt", :last=>"Laguardia", :email=>"matt@example.com"},
-#     {:first=>"Ilias", :last=>"Tsangaris", :email=>"ilias@example.com"},
-#     {:first=>FFaker::Name.first_name, :last=>FFaker::Name.last_name, :email=>FFaker::Internet.email},
-#     {:first=>FFaker::Name.first_name, :last=>FFaker::Name.last_name, :email=>FFaker::Internet.email},
-#     {:first=>FFaker::Name.first_name, :last=>FFaker::Name.last_name, :email=>FFaker::Internet.email},
-#     {:first=>FFaker::Name.first_name, :last=>FFaker::Name.last_name, :email=>FFaker::Internet.email},
-#     {:first=>FFaker::Name.first_name, :last=>FFaker::Name.last_name, :email=>FFaker::Internet.email}
-# ]
-#
-# Speaker.create(speakers_data)
-
 Post.delete_all
 Location.delete_all
+Activity.delete_all
 
-
+# Create locations and save their image avatars
 first = Location.create({name: "San Francisco"})
 second = Location.create({name: "London"})
 third = Location.create({name: "Gibraltar"})
@@ -33,6 +18,47 @@ second.save
 third.save
 fourth.save
 
+# Create Activities and save their image avatars
+business = Activity.new({name: "Business"})
+culture = Activity.new({name: "Arts and Culture"})
+cycling = Activity.new({name: "Cycling"})
+family = Activity.new({name: "Family Fun"})
+hiking = Activity.new({name: "Hiking and Walking"})
+nightlife = Activity.new({name: "Nightlife"})
+outdoors = Activity.new({name: "Outdoor Adventure"})
+pets = Activity.new({name: "Pets"})
+relaxing = Activity.new({name: "Relaxing"})
+romance = Activity.new({name: "Romance"})
+sightseeing = Activity.new({name: "Sightseeing"})
+singles = Activity.new({name: "Singles"})
+
+business.avatar = File.open("#{Rails.root}/app/assets/images/business.jpg")
+culture.avatar = File.open("#{Rails.root}/app/assets/images/culture.jpg")
+cycling.avatar = File.open("#{Rails.root}/app/assets/images/cycling.jpeg")
+family.avatar = File.open("#{Rails.root}/app/assets/images/family.jpg")
+hiking.avatar = File.open("#{Rails.root}/app/assets/images/hiking.jpg")
+nightlife.avatar = File.open("#{Rails.root}/app/assets/images/nightlife.jpg")
+outdoors.avatar = File.open("#{Rails.root}/app/assets/images/outdoors.jpg")
+pets.avatar = File.open("#{Rails.root}/app/assets/images/pets.jpeg")
+relaxing.avatar = File.open("#{Rails.root}/app/assets/images/relaxing.jpg")
+romance.avatar = File.open("#{Rails.root}/app/assets/images/romance.jpg")
+sightseeing.avatar = File.open("#{Rails.root}/app/assets/images/sightseeing.jpg")
+singles.avatar = File.open("#{Rails.root}/app/assets/images/singles.jpg")
+
+business.save
+culture.save
+cycling.save
+family.save
+hiking.save
+nightlife.save
+outdoors.save
+pets.save
+relaxing.save
+romance.save
+sightseeing.save
+singles.save
+
+# Create Posts
 posts_data = [
 {:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first, :addr=>"225 Bush St San Francisco CA"},
 {:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.first, :location=> Location.first, :addr=>"1600 Pennsylvania Ave Washington DC"},
@@ -61,17 +87,13 @@ posts_data = [
 {:title=>FFaker::Book.title, :content=>FFaker::CheesyLingo.paragraph, :user=> User.fourth, :location=> Location.fourth, :addr=>"1600 Pennsylvania Ave Washington DC"}
 ]
 
-post = Post.create(posts_data)
-post.each do |post|
-  p post.latitude
+Post.create(posts_data)
+
+Post.all.each do |p|
+  p.activities.push(Activity.order('RANDOM()').limit(3))
 end
 
-#
-# Post.delete_all
-#  posts = []
-# 10.times do |i|
-#   posts<<(
-#     {:title=>FFaker::Book.title,
-#      :content=>FFaker::BaconIpsum.paragraphs})
-# end
-# Post.create([posts])
+
+p Post.first.activities
+p "Goodbye from seeds.rb"
+
