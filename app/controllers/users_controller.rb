@@ -19,27 +19,27 @@ class UsersController < ApplicationController
   end
 
   def create
-   user = User.new(user_params)
+    user = User.new(user_params)
     if user.save
       login(user)
       redirect_to user
       UserMailer.welcome_email(user).deliver_now
 
-   else
-     @user.errors.full_messages.each do |message|
+    else
+     user.errors.full_messages.each do |message|
        flash[:error] = message
      end
      redirect_to new_user_path
     end
- end
+  end
 
   before_action :require_login, only: [:edit, :update]
 
- def edit
-  user_id = params[:id]
-  @user = User.find_by_id(user_id)
-  render :edit
-end
+  def edit
+    user_id = params[:id]
+    @user = User.find_by_id(user_id)
+    render :edit
+  end
 
 def update
   user_id = params[:id]
@@ -53,7 +53,6 @@ def update
     redirect_to edit_user_path(@user)
   end
 end
-
 
   private
   def user_params
