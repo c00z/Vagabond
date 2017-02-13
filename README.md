@@ -1,4 +1,4 @@
-# Vagabond - [Live Link](https://google.com)
+# Vagabond - [Live Link](https://immense-taiga-88650.herokuapp.com/)
 
 <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="100">
 
@@ -13,7 +13,7 @@ Users will be able to create a profile, make new posts and view a record of thei
 
 Feel free to fork / star / watch for your own personal use.
 
-See the published project at [test.herokuapp.com](https://google.com/)!
+See the published project at [immense-taiga-88650.herokuapp.com](https://immense-taiga-88650.herokuapp.com/)!
 
 #Entity-Relationship Diagram
 <img src="http://i.imgur.com/VJQIu2D.png" width="800">
