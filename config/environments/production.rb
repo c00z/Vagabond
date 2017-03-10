@@ -1,5 +1,5 @@
 Rails.application.configure do
-  
+
   config.action_mailer.default_url_options = {:host => 'localhost:8080'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -35,8 +35,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
+  config.assets.compile = true
+  config.serve_static_assets = true
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
