@@ -4,6 +4,21 @@ Post.delete_all
 Location.delete_all
 Activity.delete_all
 
+rj = User.first
+ricky = User.second
+zach = User.third
+cb = User.fourth
+
+rj.avatar = File.open("#{Rails.root}/app/assets/images/rj.jpg")
+ricky.avatar = File.open("#{Rails.root}/app/assets/images/ricky.jpg")
+zach.avatar = File.open("#{Rails.root}/app/assets/images/zach.jpg")
+cb.avatar = File.open("#{Rails.root}/app/assets/images/cb.jpg")
+
+rj.save
+ricky.save
+zach.save
+cb.save
+
 # Create locations and save their image avatars
 first = Location.create({name: "San Francisco"})
 second = Location.create({name: "London"})
@@ -96,4 +111,3 @@ end
 
 p Post.first.activities
 p "Goodbye from seeds.rb"
-
