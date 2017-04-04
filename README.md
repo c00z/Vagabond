@@ -33,9 +33,13 @@ Rails
 
 
 ## Code We're Proud Of
+
 <hr>
+
 Ricardo
+
 <hr>
+
 ```ruby
 def update
   post_id = params[:id]
@@ -53,9 +57,13 @@ def update
   end
 end
 ```
+
 <hr>
+
 Zach
+
 <hr>
+
 ```ruby
 def create
  user = User.new(user_params)
@@ -72,9 +80,13 @@ def create
   end
 end
 ```
+
 <hr>
+
 RJ
+
 <hr>
+
 ```ruby
 def activity_count
   activity_counter = {}
