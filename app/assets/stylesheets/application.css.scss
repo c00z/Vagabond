@@ -1,0 +1,169 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require materialize
+ *= require toastr
+ */
+
+body {
+   background-color: #f5f5f5;
+ }
+
+
+#navbar {
+  background: #00BBD3;
+}
+
+#slogan {
+  font-size: 65px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 450px;
+  color: black;
+  font-family: 'Arvo', serif;
+  background-color: white;
+  opacity: .6;
+  font-weight: bold;
+}
+
+#parallax {
+    background-image: url("map.jpg");
+    min-height: 450px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -33px;
+}
+
+#cardlink {
+  text-decoration: none!important;
+  color: white;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+#map {
+  box-sizing: border-box;
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: block;
+  position: relative;
+  left: 10%;
+  border-color: white;
+  border-width: 25px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#userprofileimg {
+  /*border-radius: 25%;*/
+ 	/*border: 5px solid #000;*/
+ 	/*background: #000;*/
+  display: inline-block;
+  position: relative;
+  left: 0;
+  border-color: white;
+  border-width: 25px;
+  -moz-border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-image: url(http://tobias-reinhardt.de/img/frame.png) 15 stretch;
+  border-style: solid;
+  margin: 0 auto;
+}
+
+
+.posts-background {
+  background-color: #9D9D9D;
+  border-radius: 10px;
+  border-color: #00BBD3!important;
+  border: solid;
+  margin-right: 5%!important;
+}
+
+.post-title {
+  text-decoration: none;
+  color: white!important;
+}
+
+.adventure-text {
+  margin-top: 40%;
+  text-align: center;
+}
+
+.button-color {
+  background-color: #00BBD3!important;
+}
+
+#signuppage {
+  background-color: #9D9D9D;
+  border: 2px solid #00BBD3;
+  border-radius: 10px;
+}
+
+#form {
+  background-color: white;
+  border: 1px solid #00BBD3;
+  border-radius: 5px;
+}
+
+#form-check {
+  background-color: white;
+  /*border: 1px solid #00BBD3;
+  border-radius: 5px;*/
+}
+
+#signupheader {
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-size: 40px;
+  color: white;
+}
+
+#signupbutton {
+  margin: 10px;
+}
+
+#Signuppagebackground {
+  background-image: url("map.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 750px;
+}
+
+#newpostimage {
+  border: 3px black solid;
+}
+
+.profile {
+  margin-top: 55px;
+  font-size: 18px;
+  line-height: 180%;
+}
+
+.btn {
+  background-color: #00BBD3 !important;
+}
+
+.btn:hover {
+  background-color: #02E0FF !important;
+}
+
+.delete:hover {
+  background-color: #C60000 !important;
+}

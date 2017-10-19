@@ -20,7 +20,6 @@
 //= require gmaps/google
 
 
-
 $(document).ready(function() {
 
 
